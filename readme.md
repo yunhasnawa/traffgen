@@ -1,4 +1,4 @@
-TraffGen: Python flexible traffic generator
+# TraffGen: Python flexible traffic generator
 
 This is a library intended to make random TCP traffic generation process easier.
 Using this library, we can generate certain amount of TCP byte array and send it to a selected IP address.
@@ -13,13 +13,32 @@ This library consists of 2 classes:
 - Sender    : The main module will use this class if it run using "Client" Mode
 - Receiver  : This will used when we run the module in "Server" mode
 
-Usage:
-- To run as a Server/Receiver and RECEIVE data:
-  * python traffgen.py --server true
-- To run as a Client/Sender and SENDING data:
-  * python traffgen.py --server_ip 127.0.0.1 --data_size 1024 --send_count 10 --sleep 1
-  * Parameters:
-    --> server_ip "xxx.xxx.xxx.xxx" (This is the Receiver address)
-    --> data_size <a number> (This is the size of the data to sent to the Server)
-    --> send_count <a number> (How many time the client should send the data before it shuts)
-    --> sleep <a number> (How many seconds the client should should wait after it each time it successfully send the data)
+### Usage:
+To run as a Server/Receiver and RECEIVE data:
+```sh
+python traffgen.py --server true
+```
+Parameters:
+| Param | Value | Info |
+| ------ | ------ | ------ |
+| server | "true" or any or not specified | Run as a Receiver if "true", as Sender otherwise |
+
+To run as a Client/Sender and SENDING data:
+```sh
+python traffgen.py --server_ip 127.0.0.1 --data_size 1024 --send_count 10 --sleep 1
+```
+Parameters:
+| Param | Value | Info |
+| ------ | ------ | ------ |
+| server_ip | "xxx.xxx.xxx.xxx" | This is the Receiver address |
+| data_size | <a number> | This is the size of the data to sent to the Server |
+| send_count | <a number> | How many time the client should send the data before it shuts |
+| sleep | <a number> | How many seconds the client should should wait after it each time it successfully send the data |
+
+License
+----
+
+MIT
+
+
+**Free Software, Hell Yeah!**
