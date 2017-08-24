@@ -1,3 +1,7 @@
+# Author: Yoppy Yunhasnawa of Politeknik Negeri Malang
+# (yunhasnawa@gmail.com)
+# traffgen
+
 import socket
 import time
 import random
@@ -5,7 +9,6 @@ import string
 from optparse import OptionParser
 
 DEFAULT_PORT = 2127  # Arbitrary non-privileged port
-FLAG_OK = "OK"
 DEFAULT_BUFFER_SIZE = 1024
 
 
@@ -28,8 +31,8 @@ class Sender(object):
         return data
 
     def start(self):
-        data = Sender.create_data(self.data_size)
         while self.success_count < self.sending_count:
+            data = Sender.create_data(self.data_size)
             success = Sender.send_data(self.receiver_ip, data)
             if success:
                 self.success_count += 1
